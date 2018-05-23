@@ -16,11 +16,11 @@ rm $name.key.org
 echo "Generating certificate..."
 openssl x509 -req -days 365 -in $name.csr -signkey $name.key -out $name.crt
 
-echo "Moving certificate ($name.crt) to ../conf/ssl/certs/"
+echo "Moving certificate ($name.crt) to conf/ssl/certs/"
 mv $name.crt ./conf/ssl/certs/
 
-echo "Moving key ($name.key) to ../conf/ssl/certs/"
+echo "Moving key ($name.key) to conf/ssl/certs/"
 mv $name.key ./conf/ssl/certs/
 
-echo "Moving csr ($name.csr) to ../conf/ssl/csr/"
+echo "Moving csr ($name.csr) to conf/ssl/csr/"
 mv $name.csr ./conf/ssl/csr/
