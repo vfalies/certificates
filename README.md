@@ -7,7 +7,7 @@ Image to generate and regenerate SSL certificates
 ### SSL certificate creation
 
 ```
-docker run -ti --rm -v $(shell pwd):/app/conf vfac/certificates /app/certificate.sh
+docker run -ti --rm -v $(shell pwd):/app/ssl vfac/certificates /app/certificate.sh
 ```
 
 Follow all instructions at the screen.
@@ -28,3 +28,12 @@ Common Name (eg, fully qualified host name) []:
 ```
 
 The field must contain the domain used for this certificate.
+
+### SSL certification regeneration
+
+```
+docker run -ti --rm -v $(shell pwd):/app/ssl vfac/certificates /app/regenerate_certificate.sh
+```
+
+The SSL certificate to regenerate must be in the local current directory.
+The question ask by script is the name of this certificate file (without extension)

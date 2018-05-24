@@ -6,6 +6,8 @@ RUN apk --update add ca-certificates && \
         openssl \
     && rm -rf /var/cache/apk/*
 
+RUN mkdir -p /app/ssl
+
 ADD certificate.sh /app/
 ADD regenerate_certificate.sh /app/
 
