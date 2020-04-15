@@ -17,10 +17,10 @@ echo "Generating certificate..."
 openssl x509 -req -days 365 -in $name.csr -signkey $name.key -out $name.crt
 
 echo "Moving certificate ($name.crt) to ssl/"
-mv $name.crt ./ssl/.
+mv $name.crt /app/ssl/.
 
 echo "Moving key ($name.key) to ssl/"
-mv $name.key ./ssl/.
+mv $name.key /app/ssl/.
 
 echo "Moving csr ($name.csr) to ssl/"
-mv $name.csr ./ssl/.
+mv $name.csr /app/ssl/.
